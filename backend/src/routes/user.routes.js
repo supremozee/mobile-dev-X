@@ -8,4 +8,5 @@ router.post("/sync", protectedRoute, syncUser)
 router.post("/me", protectedRoute, getCurrentUser)
 router.put("/profile", protectedRoute, updateProfile)
 router.post("/follow/:targetUserId", protectedRoute, followUser);
+
 export default router

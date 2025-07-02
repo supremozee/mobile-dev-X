@@ -2,6 +2,11 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const requiredEnv = ['MONGO_URI', 'CLERK_PUBLISHABLE_KEY', 'CLERK_SECRET_KEY']
+requiredEnv.forEach(envVar=> {
+  if(!process.env[envVar])
+    throw new Error(`Missing required environment variable: ${envVar}`)
+})
 export const ENV = {
   PORT: process.env.PORT,
   NODE_ENV: process.env.NODE_ENV,

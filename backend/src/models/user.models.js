@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
  email: {
     type:String,
     required:true,
-    unique:true
+    unique:true,
+     match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
  },
   firstName: {
     type:String,
@@ -21,7 +22,11 @@ const userSchema = new mongoose.Schema({
  userName: {
     type:String,
     required:true,
-    unique:true
+    unique:true,
+     unique:true,
+     minLength: 3,
+     maxLength: 30,
+     match: [/^[a-zA-Z0-9_]+$/, 'Username can only contain letters, numbers, and underscores']
  },
  profilePicture: {
     type:String,

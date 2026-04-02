@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { ColorScheme } from "@/types/style";
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { darkColors, lightColors } from "@/constants/colors";
+import { darkColors, lightColors } from "@/constants/Colors";
 
 interface ThemeContextType {
     isDarkMode: boolean;
